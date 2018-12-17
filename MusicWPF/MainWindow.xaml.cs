@@ -23,6 +23,7 @@ namespace MusicWPF
         public MainWindow()
         {
             InitializeComponent();
+            this.DataContext = new MusicStructureViewModel();
         }
     }
 }

@@ -10,10 +10,12 @@ namespace MusicWPF
 
         public MusicStructureViewModel()
         {
+            MusicStructureHelper.InitializeDB();
+
             var children = MusicStructureHelper.GetArtists();
 
             this.Items = new ObservableCollection<MusicItemViewModel>(children.
-                Select(x => new MusicItemViewModel(ItemTypeEnum.Artist, x.Name)));
+                Select(x => new MusicItemViewModel(ItemTypeEnum.Artist, x.Name, x.ID)));
         }
     }
 }

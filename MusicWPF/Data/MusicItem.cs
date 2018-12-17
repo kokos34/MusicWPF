@@ -8,6 +8,8 @@ namespace MusicWPF
 {
     public class MusicItem
     {
+        public int ID { get; set; }
+
         public ItemTypeEnum Type { get; set; }
 
         public string Name { get; set; }

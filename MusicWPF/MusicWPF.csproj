@@ -84,6 +84,7 @@
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\MusicItemViewModel.cs" />
     <Compile Include="ViewModels\MusicStructureViewModel.cs" />
+    <Compile Include="ViewModels\RelayCommand.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainWindow.xaml.cs">

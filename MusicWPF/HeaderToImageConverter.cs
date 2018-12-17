@@ -4,7 +4,7 @@ using System.Globalization;
 using System.Windows.Data;
 using System.Windows.Media.Imaging;
 
-namespace MusicTreeView
+namespace MusicWPF
 {
     [ValueConversion(typeof(ItemTypeEnum), typeof(BitmapImage))]
     public class HeaderToImageConverter : IValueConverter

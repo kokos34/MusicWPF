@@ -6,13 +6,10 @@ using System.Threading.Tasks;
 
 namespace MusicWPF
 {
-    /// <summary>
-    /// Type of the node
-    /// </summary>
-    public enum ItemTypeEnum
+    public class MusicItem
     {
-        Artist,
-        Album,
-        Song
+        public ItemTypeEnum Type { get; set; }
+
+        public string Name { get; set; }
     }
 }

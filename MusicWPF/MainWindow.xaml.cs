@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace MusicTreeView
+namespace MusicWPF
 {
     /// <summary>
     /// Logika interakcji dla klasy MainWindow.xaml

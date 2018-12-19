@@ -21,6 +21,25 @@ namespace MusicWPF
 
         public ICommand ExpandCommand { get; set; }
 
+        private ICommand _refreshClickCommand;
+
+        public ICommand RefreshCommand
+        {
+            get
+            {
+                return _refreshClickCommand ?? (_refreshClickCommand = new RelayCommand(() => RefreshClicked()));
+            }
+            set
+            {
+                _refreshClickCommand = value;
+            }
+        }   
+
+        public void RefreshClicked()
+        {
+            MusicStructureHelper.InitializeDB();
+        }
+                       
         public bool IsExpanded
         {
             get
@@ -67,6 +86,7 @@ namespace MusicWPF
         public MusicItemViewModel(ItemTypeEnum type, string name, int id)
         {
             this.ExpandCommand = new RelayCommand(Expand);
+            //this.RefreshCommand = new RelayCommand(RefreshClicked);
 
             this.ID = id;
             this.Type = type;

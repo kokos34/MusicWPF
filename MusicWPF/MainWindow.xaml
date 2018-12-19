@@ -5,25 +5,36 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MusicWPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" SizeToContent="Width">
+        Title="Music Browser" Height="450" Width="600" SizeToContent="Height" FontFamily="Trebuchet MS" Background="#FF2C2C2C" Foreground="#FF53B41B" BorderBrush="#FF2C2C2C" FontSize="14" FontWeight="Bold" >
     <Grid>
-        <TreeView x:Name="MusicTreeView" ItemsSource="{Binding Items}" >
-            <TreeView.ItemContainerStyle>
-                <Style TargetType="{x:Type TreeViewItem}">
-                    <Setter Property="IsExpanded" Value="{Binding IsExpanded, Mode=TwoWay}"/>
-                </Style>
-            </TreeView.ItemContainerStyle>
-            <TreeView.ItemTemplate>
-                <HierarchicalDataTemplate ItemsSource="{Binding Children}">
-                    <StackPanel Orientation="Horizontal">
-                        <Image x:Name="Icon" Width="20" Margin="3"
+        <StackPanel Orientation="Vertical">
+            <StackPanel Orientation="Horizontal" Margin="0, 3, 0, 3">
+                <Button Command="{Binding RefreshCommand}" x:Name="Refresh" Width="30" Margin="50, 0, 30, 0" Height="30" >
+                    <Image Source="Images/Refresh.png" Stretch="Fill" />                    
+                </Button>
+                <Button Command="{Binding AddCommand}" x:Name="AddNew" Width="30">
+                    <Image Source="Images/Add.png" Stretch="Fill" />
+                </Button>
+            </StackPanel>
+            <TextBlock x:Name="SongsList" Text="List of songs" Foreground="White"/>
+            <TreeView x:Name="MusicTreeView" ItemsSource="{Binding Items}" Background="#FF898787" BorderBrush="White">
+                <TreeView.ItemContainerStyle>
+                    <Style TargetType="{x:Type TreeViewItem}">
+                        <Setter Property="IsExpanded" Value="{Binding IsExpanded, Mode=TwoWay}"/>
+                    </Style>
+                </TreeView.ItemContainerStyle>
+                <TreeView.ItemTemplate>
+                    <HierarchicalDataTemplate ItemsSource="{Binding Children}">
+                        <StackPanel Orientation="Horizontal">
+                            <Image x:Name="Icon" Width="20" Margin="3"
                                Source="{Binding ImageName,
                                Converter={x:Static local:HeaderToImageConverter.Instance}}"/>
-                        <TextBlock Text="{Binding Name}"/>
-                    </StackPanel>
-                </HierarchicalDataTemplate>
-            </TreeView.ItemTemplate>
-        </TreeView>
-        
+                            <TextBlock Text="{Binding Name}"/>
+                        </StackPanel>
+                    </HierarchicalDataTemplate>
+                </TreeView.ItemTemplate>
+            </TreeView>
+        </StackPanel>
     </Grid>
 </Window>
+

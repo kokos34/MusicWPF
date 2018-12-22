@@ -12,7 +12,7 @@
                 <Button Command="{Binding RefreshCommand}" x:Name="Refresh" Width="30" Margin="50, 0, 30, 0" Height="30" >
                     <Image Source="Images/Refresh.png" Stretch="Fill" />                    
                 </Button>
-                <Button Command="{Binding AddCommand}" x:Name="AddNew" Width="30">
+                <Button Click="AddButtonClicked" x:Name="AddNew" Width="30">
                     <Image Source="Images/Add.png" Stretch="Fill" />
                 </Button>
             </StackPanel>

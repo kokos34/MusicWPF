@@ -10,26 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace MusicWPF
 {
     /// <summary>
-    /// Logika interakcji dla klasy MainWindow.xaml
+    /// Interaction logic for AddMusicItemView.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class AddMusicItemView : Window
     {
-        public MainWindow()
+        public AddMusicItemView()
         {
             InitializeComponent();
-            this.DataContext = new CentralViewModel();
-        }
-
-        private void AddButtonClicked(object sender, RoutedEventArgs e)
-        {
-            AddMusicItemView addItemView = new AddMusicItemView();
-            addItemView.Show();
         }
     }
 }

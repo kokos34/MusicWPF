@@ -1,0 +1,34 @@
+﻿<Window x:Class="MusicWPF.AddMusicItemView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MusicWPF"
+        mc:Ignorable="d"
+        Title="Add music item" Height="450" Width="350" FontFamily="Trebuchet MS" FontWeight="Bold">
+    <Grid Background="#FF2C2C2C">
+        <StackPanel x:Name="MainStackPanel" Orientation="Vertical">
+            <Label Content="Choose item type:" Foreground="White"/>
+            <ComboBox x:Name="SelectedItemCbx" Width="Auto">
+                <ComboBoxItem Content="Artist"/>
+                <ComboBoxItem Content="Album"/>
+                <ComboBoxItem Content="Song"/>
+            </ComboBox>
+            <Label x:Name="ParentItemsLabel" Content="Belongs to:" Foreground="White"/>
+            <ComboBox x:Name="BelongsToCbx" ItemsSource="{Binding ParentItems}"/>
+            <StackPanel Orientation="Horizontal" Height="Auto" Margin="0, 10, 0, 10">
+                <Label Content="Name" Foreground="White"/>
+                <TextBox x:Name="Name" Width="285" HorizontalAlignment="Right"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Height="Auto" Margin="0, 10, 0, 10">
+                <Label Content="Additional name" Foreground="White"/>
+                <TextBox x:Name="Name_2" Width="225" HorizontalAlignment="Right"/>            
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Height="Auto" Margin="0, 10, 0, 10">
+                <Label Content="Release date" Foreground="White"/>
+                <TextBox x:Name="RelDate" Width="250" HorizontalAlignment="Right"/>
+            </StackPanel>
+        </StackPanel>
+        
+    </Grid>
+</Window>

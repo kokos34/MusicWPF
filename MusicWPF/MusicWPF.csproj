@@ -70,6 +70,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AddMusicItemView.xaml.cs">
+      <DependentUpon>AddMusicItemView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Data\MusicItem.cs" />
     <Compile Include="EntityFramework\ALBUMS.cs" />
     <Compile Include="EntityFramework\ARTISTS.cs" />
@@ -119,6 +122,10 @@
     <None Include="EntityFramework\App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="AddMusicItemView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

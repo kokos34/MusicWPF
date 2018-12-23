@@ -8,12 +8,16 @@ namespace MusicWPF
     public class CentralViewModel : BaseViewModel
     {
         public ObservableCollection<MusicItemViewModel> Items { get; set; }
-        ButtonsViewModel buttonsVM = new ButtonsViewModel();
 
         public CentralViewModel()
         {            
-            this.RefreshCommand = new RelayCommand(buttonsVM.RefreshClicked);
+            this.RefreshCommand = new RelayCommand(RefreshClicked);
 
+            GetItems();
+        }
+
+        private void GetItems()
+        {
             MusicStructureHelper.InitializeDB();
 
             var children = MusicStructureHelper.GetArtists();
@@ -23,6 +27,11 @@ namespace MusicWPF
         }
 
         public ICommand RefreshCommand { get; set; }
-        
+
+        public void RefreshClicked()
+        {
+            GetItems();
+        }
+
     }
 }

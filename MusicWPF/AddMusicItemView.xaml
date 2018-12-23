@@ -5,30 +5,27 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MusicWPF"
         mc:Ignorable="d"
-        Title="Add music item" Height="450" Width="350" FontFamily="Trebuchet MS" FontWeight="Bold">
-    <Grid Background="#FF2C2C2C">
+        Title="Add song" Height="192.75" Width="350" FontFamily="Trebuchet MS" FontWeight="Bold">
+    <Grid Background="#FF2C2C2C" x:Name="ItemsGrid">
         <StackPanel x:Name="MainStackPanel" Orientation="Vertical">
-            <Label Content="Choose item type:" Foreground="White"/>
-            <ComboBox x:Name="SelectedItemCbx" Width="Auto">
-                <ComboBoxItem Content="Artist"/>
-                <ComboBoxItem Content="Album"/>
-                <ComboBoxItem Content="Song"/>
+            <Label Content="Artist:" Foreground="White"/>
+            <ComboBox x:Name="ArtistComboBox" 
+                      ItemsSource="{Binding ParentArtists}" 
+                      SelectedItem="{Binding SelectedArtist}"
+                      DisplayMemberPath="Name"
+                      Margin="10,0"/>
+            <Label x:Name="ParentItemsLabel" Content="Album:" Foreground="White"/>
+            <ComboBox x:Name="BelongsToCbx" 
+                      ItemsSource="{Binding ParentAlbums}" 
+                      SelectedItem="{Binding SelectedAlbum}"
+                      DisplayMemberPath="Name"
+                      Margin="10,0">
             </ComboBox>
-            <Label x:Name="ParentItemsLabel" Content="Belongs to:" Foreground="White"/>
-            <ComboBox x:Name="BelongsToCbx" ItemsSource="{Binding ParentItems}"/>
-            <StackPanel Orientation="Horizontal" Height="Auto" Margin="0, 10, 0, 10">
+            <StackPanel Orientation="Horizontal" Height="Auto" Margin="0, 10, 0, 10" VerticalAlignment="Bottom">
                 <Label Content="Name" Foreground="White"/>
-                <TextBox x:Name="Name" Width="285" HorizontalAlignment="Right"/>
+                <TextBox Text="{Binding SongName}" x:Name="Name" Width="285" HorizontalAlignment="Right"/>
             </StackPanel>
-            <StackPanel Orientation="Horizontal" Height="Auto" Margin="0, 10, 0, 10">
-                <Label Content="Additional name" Foreground="White"/>
-                <TextBox x:Name="Name_2" Width="225" HorizontalAlignment="Right"/>            
-            </StackPanel>
-            <StackPanel Orientation="Horizontal" Height="Auto" Margin="0, 10, 0, 10">
-                <Label Content="Release date" Foreground="White"/>
-                <TextBox x:Name="RelDate" Width="250" HorizontalAlignment="Right"/>
-            </StackPanel>
+            <Button Content="Add song" Command="{Binding AddItemCommand}" Margin="10,0,274,0"/>
         </StackPanel>
-        
     </Grid>
 </Window>

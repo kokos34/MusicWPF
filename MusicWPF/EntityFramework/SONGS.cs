@@ -10,6 +10,7 @@ namespace MusicWPF
     {
         [Key]
         [Column(Order = 0)]
+        [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         public int ID { get; set; }
 
         public int? ID_Album { get; set; }

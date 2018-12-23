@@ -22,6 +22,7 @@ namespace MusicWPF
         public AddMusicItemView()
         {
             InitializeComponent();
+            this.DataContext = new AddSongViewModel();
         }
     }
 }

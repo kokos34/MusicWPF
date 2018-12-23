@@ -1,6 +1,9 @@
 ﻿
+
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
+using System.Windows;
 
 namespace MusicWPF
 {
@@ -29,6 +32,24 @@ namespace MusicWPF
         public static List<SONGS> GetAlbumsSongs(int Album_ID)
         {
             return db.SONGS.Where(x => x.ID_Album == Album_ID).ToList();
+        }
+
+        public static void AddSong(int Album_ID, string name)
+        {
+            SONGS newSong = new SONGS();
+            newSong.ID_Album = Album_ID;
+            newSong.Name = name;
+
+            try
+            {
+                db.SONGS.Add(new SONGS() { ID_Album = Album_ID, Name = name });
+                db.SaveChanges();
+            }
+            catch(System.Exception ex)
+            {
+                MessageBox.Show("Failed to add new song", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                Trace.WriteLine(ex.Message, "Error");
+            }            
         }
     }
 }

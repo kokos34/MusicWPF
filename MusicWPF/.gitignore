@@ -2,3 +2,6 @@
 obj/
 bin/
 packages/
+../MusicWPF/UnitTestProject1/
+../MusicWPF.Tests/bin/
+../MusicWPF.Tests/obj/

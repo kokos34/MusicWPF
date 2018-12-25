@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.168
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicTreeView", "..\..\..\..\git\Music WPF tutorial\MusicWPF\MusicWPF\MusicWPF.csproj", "{42D868FF-3FE7-486B-A689-EC187B390A70}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicWPF", "MusicWPF.csproj", "{70A61083-5AD5-47F4-9EE2-4255A45712E6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicWPF.Tests", "MusicWPF.Tests\MusicWPF.Tests.csproj", "{20C47DF4-C8BF-40F5-B4B1-38CDE92F89BA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +13,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{42D868FF-3FE7-486B-A689-EC187B390A70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{42D868FF-3FE7-486B-A689-EC187B390A70}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{42D868FF-3FE7-486B-A689-EC187B390A70}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{42D868FF-3FE7-486B-A689-EC187B390A70}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70A61083-5AD5-47F4-9EE2-4255A45712E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70A61083-5AD5-47F4-9EE2-4255A45712E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70A61083-5AD5-47F4-9EE2-4255A45712E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70A61083-5AD5-47F4-9EE2-4255A45712E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20C47DF4-C8BF-40F5-B4B1-38CDE92F89BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20C47DF4-C8BF-40F5-B4B1-38CDE92F89BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20C47DF4-C8BF-40F5-B4B1-38CDE92F89BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20C47DF4-C8BF-40F5-B4B1-38CDE92F89BA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

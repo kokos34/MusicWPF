@@ -2,6 +2,7 @@
 using System.Text;
 using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Moq;
 
 namespace MusicWPF.Tests
 {
@@ -43,6 +44,7 @@ namespace MusicWPF.Tests
             Assert.AreNotEqual(centralVM.Items.Count, 0);
         }
 
+        [TestMethod]
         public void RefreshClicked_Always_ReturnMoreThanOneArtist()
         {
             centralVM = new CentralViewModel();

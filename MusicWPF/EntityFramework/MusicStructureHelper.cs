@@ -51,5 +51,19 @@ namespace MusicWPF
                 Trace.WriteLine(ex.Message, "Error");
             }            
         }
+
+        public static void RemoveSong(int Album_ID, string songName)
+        {
+            List<SONGS> songs = db.SONGS.Where(x => (x.ID_Album == Album_ID && x.Name == songName)).ToList();
+            int counter = (songs == null) ? 0 : songs.Count;
+
+            foreach(SONGS song in songs)
+            {
+                db.SONGS.Remove(song);
+            }
+
+            if (counter != 0)
+                db.SaveChanges();
+        }
     }
 }
